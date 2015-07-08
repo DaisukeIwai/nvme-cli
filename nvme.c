@@ -981,7 +981,7 @@ static int get_smart_log(int argc, char **argv)
 
 	struct config {
 		__u32 namespace_id;
-		__u8  raw_binary;
+		__u32 raw_binary;
 	};
 	struct config cfg;
 
@@ -1022,7 +1022,7 @@ static int get_error_log(int argc, char **argv)
 	struct config {
 		__u32 namespace_id;
 		__u32 log_entries;
-		__u8  raw_binary;
+		__u32 raw_binary;
 	};
 	struct config cfg;
 
@@ -1071,7 +1071,7 @@ static int get_fw_log(int argc, char **argv)
 	struct nvme_firmware_log_page fw_log;
 
 	struct config {
-		__u8  raw_binary;
+		__u32 raw_binary;
 	};
 	struct config cfg;
 
@@ -1112,7 +1112,7 @@ static int get_log(int argc, char **argv)
 		__u32 namespace_id;
 		__u32 log_id;
 		__u32 log_len;
-		__u8  raw_binary;
+		__u32 raw_binary;
 	};
 	struct config cfg;
 
@@ -1582,9 +1582,9 @@ static int id_ctrl(int argc, char **argv)
 	struct nvme_id_ctrl ctrl;
 
 	struct config {
-		__u8  vendor_specific;
-		__u8  raw_binary;
-		__u8  human_readable;
+		__u32 vendor_specific;
+		__u32 raw_binary;
+		__u32 human_readable;
 	};
 	struct config cfg;
 
@@ -1625,9 +1625,9 @@ static int id_ns(int argc, char **argv)
 
 	struct config {
 		__u32 namespace_id;
-		__u8  vendor_specific;
-		__u8  raw_binary;
-		__u8  human_readable;
+		__u32 vendor_specific;
+		__u32 raw_binary;
+		__u32 human_readable;
 	};
 	struct config cfg;
 
@@ -1727,7 +1727,7 @@ static int get_feature(int argc, char **argv)
 		__u8  sel;
 		__u32 cdw11;
 		__u32 data_len;
-		__u8  raw_binary;
+		__u32 raw_binary;
 	};
 	struct config cfg;
 
@@ -2253,7 +2253,7 @@ static int resv_acquire(int argc, char **argv)
 		__u64 prkey;
 		__u8  rtype;
 		__u8  racqa;
-		__u8  iekey;
+		__u32 iekey;
 	};
 	struct config cfg;
 
@@ -2336,7 +2336,7 @@ static int resv_register(int argc, char **argv)
 		__u64 nrkey;
 		__u8  rrega;
 		__u8  cptpl;
-		__u8  iekey;
+		__u32 iekey;
 	};
 	struct config cfg;
 
@@ -2496,7 +2496,7 @@ static int resv_report(int argc, char **argv)
 	struct config {
 		__u32 namespace_id;
 		__u32 numd;
-		__u8  raw_binary;
+		__u32 raw_binary;
 	};
 	struct config cfg;
 
@@ -2580,11 +2580,11 @@ static int submit_io(int opcode, char *command, int argc, char **argv)
 		__u8  prinfo;
 		__u8  app_tag_mask;
 		__u32 app_tag;
-		__u8  limited_retry;
-		__u8  force_unit_access;
-		__u8  show;
-		__u8  dry_run;
-		__u8  latency;
+		__u32 limited_retry;
+		__u32 force_unit_access;
+		__u32 show;
+		__u32 dry_run;
+		__u32 latency;
 	};
 	struct config cfg;
 
@@ -2748,7 +2748,7 @@ static int sec_recv(int argc, char **argv)
 		__u8  secp;
 		__u16 spsp;
 		__u32 al;
-		__u8  raw_binary;
+		__u32 raw_binary;
 	};
 	struct config cfg;
 
@@ -2829,11 +2829,11 @@ static int nvme_passthru(int argc, char **argv, int ioctl_cmd)
 		__u32 cdw14;
 		__u32 cdw15;
 		char  *input_file;
-		__u8  raw_binary;
-		__u8  show_command;
-		__u8  dry_run;
-		__u8  read;
-		__u8  write;
+		__u32 raw_binary;
+		__u32 show_command;
+		__u32 dry_run;
+		__u32 read;
+		__u32 write;
 	};
 	struct config cfg;
 
